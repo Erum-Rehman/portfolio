@@ -56,7 +56,7 @@ export default function Hero() {
               View Resume
             </Link>
             <Link href="#contact" style={heroStyles.secondaryButton}>
-              <span>Let's Talk</span>
+              <span>Lets Talk</span>
               <ArrowRight size={20} />
             </Link>
           </motion.div>

@@ -43,7 +43,7 @@ export default function Contact() {
 
       alert('Message sent successfully!');
     } catch (error) {
-      alert('Failed to send message. Please try again.');
+      alert(error);
     }
   };
 

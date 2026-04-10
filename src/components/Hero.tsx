@@ -29,7 +29,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            MERN Stack <span style={heroStyles.highlight}>Developer</span>
+            Full Stack <span style={heroStyles.highlight}>Developer</span>
           </motion.h1>
           <motion.p 
             style={heroStyles.description}
@@ -37,9 +37,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Experienced MERN Stack Developer with 2+ years of expertise in crafting high-performing mobile applications and web solutions.
-          </motion.p>
-
+            FULL Stack Developer with over 3+ years of professional experience building high performance web applications. Highly skilled in React.js & Next.js for modern, scalable web development, with a strong foundation across the FULL ecosystem. Committed to continuous learning and staying current with emerging technologies, delivering innovative, efficient solutions that drive business value and enhance user experience.          </motion.p>
           <motion.div 
             style={heroStyles.buttons}
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Link 
-              href="https://drive.google.com/file/d/1RFe01cBYH23946r4Cyoy7HjOkpMphjP4/view?usp=sharing" 
+              href="https://drive.google.com/file/d/16S0dCSwPlcGXpSwdRqmAtxPHS8wQD3Of/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={heroStyles.primaryButton}

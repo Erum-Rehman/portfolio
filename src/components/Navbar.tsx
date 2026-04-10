@@ -62,7 +62,7 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
             ))}
             <div className="flex items-center gap-2 text-[#99c9d9]">
               <Phone size={20} />
-              <span className="font-semibold">+92 123 4567890</span>
+              <span className="font-semibold">+92 341 7424005</span>
             </div>
           </div>         
         </div>       

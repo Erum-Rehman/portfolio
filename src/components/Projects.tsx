@@ -10,58 +10,68 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     id: 1,
+    title: "ENSI",
+    description: "A modern full stack accounting platform featuring transaction management, reporting modules, and reconciliation systems for efficient financial workflows.",
+    image: "/ensi.png",
+    // github: "https://github.com/yourusername/grocery-web",
+    live: "https://beans.ensi.ai",
+    tech: ["Next.js", "Tailwind", "pgadmin", "Playwright", "Supabase"]
+  },
+  {
+    id: 2,
     title: "Grocery Web",
     description: "A modern e-commerce platform built with React.js and Sass, featuring a responsive design and seamless shopping experience.",
     image: "/grocery.png",
-    github: "https://github.com/yourusername/grocery-web",
+    // github: "https://github.com/yourusername/grocery-web",
     live: "https://grocery-web-a6ca1.web.app/",
     tech: ["React.js", "Sass", "Firebase"]
   },
   {
-    id: 2,
-    title: "Atalon Web",
-    description: "A full-stack MERN application with comprehensive user authentication and dynamic content management.",
-    image: "/atalon.png",
-    github: "https://github.com/yourusername/atalon-web",
-    live: "https://atalon-web.web.app/",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js"]
-  },
-  {
     id: 3,
-    title: "Game-Fi App",
-    description: "An innovative gaming platform developed using the MERN stack with real-time features and user interactions.",
-    image: "/gamefi.png",
-    github: "https://github.com/yourusername/game-fi-app",
-    live: "https://game-fi-app.web.app/",
+    title: "BagX",
+    description: "Full-stack e-commerce platform built with MERN stack. Features product management, user authentication, shopping cart, and order processing.",
+    image: "/brands.png",
+    // github: "https://github.com/yourusername/bagx-web",
+    live: "https://bagx-b3d08.web.app/",
     tech: ["MongoDB", "Express.js", "React.js", "Node.js"]
   },
   {
     id: 4,
-    title: "BagX",
-    description: "Full-stack e-commerce platform built with MERN stack. Features product management, user authentication, shopping cart, and order processing.",
-    image: "/brands.png",
-    github: "https://github.com/yourusername/bagx-web",
-    live: "https://bagx-b3d08.web.app/",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js"]
-  },
-  {
-    id: 5,
     title: "BagX Admin",
     description: "A comprehensive admin dashboard built with React.js and Material-UI for managing e-commerce operations.",
     image: "/admin.png",
-    github: "https://github.com/yourusername/bagx-admin",
+    // github: "https://github.com/yourusername/bagx-admin",
     live: "https://bagx-b3d08.web.app/",
-    tech: ["React.js", "Material-UI", "Firebase"]
+    tech: ["React.js", "Sass", "MongoDB", "Express.js", "Node.js"]
   },
   {
-    id: 6,
+    id: 5,
     title: "Buraq Software",
     description: "A WordPress-based corporate website showcasing services and portfolio with custom theme development.",
     image: "/buraq.png",
-    github: "https://github.com/yourusername/buraq-software",
+    // github: "https://github.com/yourusername/buraq-software",
     live: "https://buraqsoftware.com/",
-    tech: ["WordPress", "PHP", "MySQL"]
-  }
+    tech: ["WordPress"]
+  },
+  {
+    id: 6,
+    title: "Atalon Web",
+    description: "A full-stack MERN application with comprehensive user authentication and dynamic content management.",
+    image: "/atalon.png",
+    // github: "https://github.com/yourusername/atalon-web",
+    live: "https://atalon-web.web.app/",
+    tech: ["React.js", "Sass"]
+  },
+  {
+    id: 7,
+    title: "Game-Fi App",
+    description: "An innovative gaming platform developed using the MERN stack with real-time features and user interactions.",
+    image: "/gamefi.png",
+    // github: "https://github.com/yourusername/game-fi-app",
+    live: "https://game-fi-app.web.app/",
+    tech: ["React.js", "Sass"]
+  },
+  
 ];
 
 export default function Projects() {
@@ -159,15 +169,15 @@ export default function Projects() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <Link
-                      href={project.github}
+                    {/* <Link
+                      // href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={projectsStyles.link}
                     >
                       <Github size={20} />
                       <span>Code</span>
-                    </Link>
+                    </Link> */}
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.1 }}

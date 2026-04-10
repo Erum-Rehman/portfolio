@@ -6,49 +6,43 @@ import { motion } from 'framer-motion';
 const education = [
   {
     id: 1,
-    year: "2019 - 2023",
+    year: "2020 - 2024",
     degree: "Bachelor of Computer Science",
-    institution: "Federal Urdu University",
+    institution: "University Of Karachi",
   },
   {
     id: 2,
     year: "2021 - 2022",
     degree: "Diploma in Web Development",
     institution: "SMIT",
-  },
-  {
-    id: 3,
-    year: "2022 - 2023",
-    degree: "Diploma in Mobile App Development",
-    institution: "SMIT",
-  },
+  }
 ];
 
 const experience = [
   {
     id: 1,
-    year: "2023 - Present",
+    year: "10/2024 - Present",
     position: "Full Stack Developer",
     company: "Buraq Software",
-    description: "Working on multiple MERN stack projects, developing responsive web applications and RESTful APIs.",
+    description: "Working on multiple Full stack projects, developing responsive web applications and RESTful APIs.",
   },
   {
     id: 2,
-    year: "2022 - 2023",
-    position: "Full Stack Developer",
+    year: "04/2024 - 09/2024",
+    position: "Mern Stack Developer",
     company: "Waka Consulting",
     description: "Developed and maintained web applications using React.js, Node.js, and MongoDB.",
   },
   {
     id: 3,
-    year: "2021 - 2022",
-    position: "MERN Stack Developer",
+    year: "01/2023 - 02/2024",
+    position: "Frontend Developer",
     company: "Finosys",
     description: "Built scalable web applications and implemented new features using MERN stack.",
   },
   {
     id: 4,
-    year: "2021",
+    year: "10/2022 - 12/2022",
     position: "Frontend Developer Intern",
     company: "Stack Sense",
     description: "Gained hands-on experience in React.js development and UI/UX implementation.",

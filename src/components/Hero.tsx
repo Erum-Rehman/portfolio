@@ -45,11 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Link 
-              href="https://drive.google.com/file/d/16S0dCSwPlcGXpSwdRqmAtxPHS8wQD3Of/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={heroStyles.primaryButton}
-            >
+            href="https://drive.google.com/file/d/1IqErEmmG-xjHGuV-5WPOzjncAoOh1pt1/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={heroStyles.primaryButton}>
               <Eye size={20} />
               View Resume
             </Link>

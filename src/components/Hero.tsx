@@ -37,7 +37,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            FULL Stack Developer with over 3+ years of professional experience building high performance web applications. Highly skilled in React.js & Next.js for modern, scalable web development, with a strong foundation across the FULL ecosystem. Committed to continuous learning and staying current with emerging technologies, delivering innovative, efficient solutions that drive business value and enhance user experience.          </motion.p>
+            FULL Stack Developer with over 4+ years of professional experience building high performance web applications. Highly skilled in React.js & Next.js for modern, scalable web development, with a strong foundation across the FULL ecosystem. Committed to continuous learning and staying current with emerging technologies, delivering innovative, efficient solutions that drive business value and enhance user experience.          </motion.p>
           <motion.div 
             style={heroStyles.buttons}
             initial={{ opacity: 0, y: 20 }}

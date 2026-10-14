@@ -64,5 +64,24 @@ export const servicesStyles: Record<string, CSSProperties> = {
     color: '#f2f5f6e8',
     lineHeight: '1.6',
     fontSize: '0.875rem'
+  },
+
+  moreWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '3rem'
+  },
+
+  moreButton: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    backgroundColor: 'rgba(153, 201, 217, 0.1)',
+    border: '1px solid rgba(153, 201, 217, 0.3)',
+    borderRadius: '9999px',
+    padding: '12px 28px',
+    color: '#99c9d9',
+    fontSize: '0.95rem',
+    cursor: 'pointer'
   }
-}; 
+};

@@ -1,64 +1,105 @@
 'use client';
 
 import { servicesStyles } from '@/styles/services.styles';
-import { Code, Terminal, Blocks, Database, Rocket, Smartphone } from 'lucide-react';
+import { Code, Terminal, Blocks, Database, ShieldCheck, MessageSquare, FlaskConical, LayoutDashboard, Smartphone, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const services = [
   {
     id: 1,
-    title: "React.js Website",
-    description: "Building modern and interactive web applications using React.js. Specializing in component-based architecture, state management, and creating responsive user interfaces with smooth animations.",
+    title: "Frontend Development",
+    description: "Building fast, modern and responsive interfaces with React.js and Next.js. Component-based architecture, state management, server-side rendering, SEO-friendly routing and smooth animations.",
     icon: <Code size={40} />
   },
   {
     id: 2,
-    title: "Next.js Website",
-    description: "Developing high-performance websites with Next.js framework. Implementing server-side rendering, static site generation, and optimized routing for better SEO and user experience.",
-    icon: <Terminal size={40} />
-  },
-  {
-    id: 3,
-    title: "Fullstack Website",
-    description: "Creating end-to-end web solutions using the MERN stack. Handling both frontend and backend development, database design, API integration, and deployment with focus on scalability.",
+    title: "Fullstack Web Applications",
+    description: "End-to-end web solutions using the MERN stack, Supabase and Firebase. Frontend and backend development, database design, API integration and deployment with focus on scalability.",
     icon: <Blocks size={40} />
   },
   {
+    id: 3,
+    title: "Authentication & SSO Integration",
+    description: "Implementing secure login flows, single sign-on, OAuth/OpenID, session handling and role-based access control for web applications and government-grade portals.",
+    icon: <ShieldCheck size={40} />
+  },
+  {
     id: 4,
-    title: "Mobile Applications",
-    description: "Developing cross-platform mobile applications using React Native. Building native-like user interfaces, implementing device features, and ensuring smooth performance across different platforms.",
-    icon: <Smartphone size={40} />
+    title: "Chat & AI Integration",
+    description: "Building real-time chat interfaces and integrating AI assistants into web platforms, from customer conversations to automated ordering and support workflows.",
+    icon: <MessageSquare size={40} />
   },
   {
     id: 5,
-    title: "API Development",
-    description: "Creating robust and secure RESTful APIs using Node.js and Express. Implementing authentication, data validation, error handling, and following best practices for API design.",
+    title: "Firebase & Supabase Backends",
+    description: "Setting up realtime databases, authentication, storage, hosting and serverless logic with Firebase and Supabase for quick, reliable and scalable backends.",
     icon: <Database size={40} />
   },
   {
     id: 6,
-    title: "Web Development",
-    description: "Full web development services from concept to deployment. Including custom website design, responsive layouts, performance optimization, and ongoing maintenance and support.",
-    icon: <Rocket size={40} />
+    title: "API Development",
+    description: "Creating robust and secure RESTful APIs using Node.js and Express. Authentication, data validation, error handling and best practices for API design.",
+    icon: <Terminal size={40} />
+  },
+  {
+    id: 7,
+    title: "Testing & QA Automation",
+    description: "Writing end-to-end and regression tests with Playwright to catch bugs early, protect critical user flows and keep releases stable and reliable.",
+    icon: <FlaskConical size={40} />
+  },
+  {
+    id: 8,
+    title: "Dashboards & Admin Panels",
+    description: "Designing data-heavy dashboards and admin panels with reporting, transaction management and reconciliation workflows for accounting and e-commerce operations.",
+    icon: <LayoutDashboard size={40} />
+  },
+  {
+    id: 9,
+    title: "Mobile Applications",
+    description: "Developing cross-platform mobile applications using React Native with native-like interfaces, device features and smooth performance across platforms.",
+    icon: <Smartphone size={40} />
   }
 ];
+
+const INITIAL_COUNT = 6;
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.15
     }
   }
 };
 
+// Cards enter from left, bottom and right in turn
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
+  hidden: (i: number) => ({
+    opacity: 0,
+    x: i % 3 === 0 ? -40 : i % 3 === 2 ? 40 : 0,
+    y: i % 3 === 1 ? 40 : 0,
+    scale: 0.95
+  }),
+  show: { opacity: 1, x: 0, y: 0, scale: 1, transition: { duration: 0.5 } },
+  hover: {
+    scale: 1.03,
+    borderColor: 'rgba(153, 201, 217, 0.5)',
+    boxShadow: '0 0 30px rgba(153, 201, 217, 0.2)',
+    transition: { duration: 0.3 }
+  }
+};
+
+const iconVariants = {
+  show: { rotate: 0, scale: 1 },
+  hover: { rotate: [0, -12, 12, 0], scale: 1.2, transition: { duration: 0.5 } }
 };
 
 export default function Services() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleServices = showAll ? services : services.slice(0, INITIAL_COUNT);
+
   return (
     <section id="services" style={servicesStyles.section}>
       <div style={servicesStyles.container}>
@@ -84,20 +125,42 @@ export default function Services() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          {services.map((service) => (
+          {visibleServices.map((service, index) => (
             <motion.div 
               key={service.id} 
               style={servicesStyles.card}
+              custom={index}
               variants={item}
-              whileHover={{ scale: 1.02, borderColor: 'rgba(153, 201, 217, 0.3)' }}
-              transition={{ duration: 0.3 }}
+              {...(index >= INITIAL_COUNT && { initial: 'hidden', animate: 'show' })}
+              whileHover="hover"
             >
-              <div style={servicesStyles.icon}>{service.icon}</div>
+              <motion.div style={servicesStyles.icon} variants={iconVariants}>
+                {service.icon}
+              </motion.div>
               <h3 style={servicesStyles.cardTitle}>{service.title}</h3>
               <p style={servicesStyles.description}>{service.description}</p>
             </motion.div>
           ))}
         </motion.div>
+
+        {services.length > INITIAL_COUNT && (
+          <div style={servicesStyles.moreWrapper}>
+            <motion.button
+              style={servicesStyles.moreButton}
+              onClick={() => setShowAll((prev) => !prev)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {showAll ? 'Show Less' : `Show All Services (${services.length})`}
+              <motion.span
+                style={{ display: 'flex' }}
+                animate={{ rotate: showAll ? 180 : 0 }}
+              >
+                <ChevronDown size={18} />
+              </motion.span>
+            </motion.button>
+          </div>
+        )}
       </div>
     </section>
   );

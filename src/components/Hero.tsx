@@ -37,7 +37,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            FULL Stack Developer with over 4+ years of professional experience building high performance web applications. Highly skilled in React.js & Next.js for modern, scalable web development, with a strong foundation across the FULL ecosystem. Committed to continuous learning and staying current with emerging technologies, delivering innovative, efficient solutions that drive business value and enhance user experience.          </motion.p>
+            Full Stack Developer with 4+ years of experience building high-performance web applications for companies and freelance clients. Specialized in React.js and Next.js, with hands-on expertise in Node.js, Supabase and Firebase backends, secure authentication and SSO, real-time chat and AI integrations, and Playwright test automation. I turn complex requirements into fast, scalable products that deliver real business value and a smooth user experience.
+          </motion.p>
           <motion.div 
             style={heroStyles.buttons}
             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +46,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Link 
-            href="https://drive.google.com/file/d/1IqErEmmG-xjHGuV-5WPOzjncAoOh1pt1/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={heroStyles.primaryButton}>
+            href="https://drive.google.com/file/d/1J6Nua30dZN4E8cjxngJSBL_CaDAqYyzQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={heroStyles.primaryButton}>
               <Eye size={20} />
               View Resume
             </Link>
